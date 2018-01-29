@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { personaggi } from './personaggi';
+import { ListService } from './list.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,16 +10,14 @@ import { personaggi } from './personaggi';
 })
 export class AppComponent {
   title: string;
-  items: personaggi[] = [];
+  items: personaggi []=[];
   value: string;
 
   constructor()
   {
     this.title="fiiiii";
-    this.items.push(new personaggi());
-    this.items.push(new personaggi("manga"));
-    this.items.push(new personaggi("one piece", "rufy"));
-    this.items.push(new personaggi("toriko", "death note", 3));
+    let listService: ListService = new ListService();
+    this.items = listService.getCharactersList();
   }
 
 showValue()
