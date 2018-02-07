@@ -12,6 +12,7 @@ export class AppComponent {
   title: string;
   items: personaggi []=[];
   value: string;
+  personaggioCorrente : personaggi;
 
   constructor()
   {
@@ -20,10 +21,15 @@ export class AppComponent {
     this.items = listService.getCharactersList();
   }
 
-showValue()
-{
-  alert("valore: "+this.value);
-  this.value="";
-}
+  showValue()
+  {
+    alert("valore: "+this.value);
+    this.value="";
+  }
 
+  showItem(perso : personaggi){
+    this.personaggioCorrente=perso;
+  }
+
+  
 }

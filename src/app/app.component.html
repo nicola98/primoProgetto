@@ -4,6 +4,14 @@
         Welcome to {{ title }}!
     </h1>
 </div>
-<list [items]="items"></list>
+<list [items]="items" (itemSelectedChange)=showItem($event)></list>
 <input [(ngModel)]="value" />
 <div (click)="showValue()" class="stupidClass">mostra valore</div>
+
+<div>
+    personaggio corrente
+    <div>type: {{personaggioCorrente?.type}}</div>
+    <div>type: {{personaggioCorrente?.name}}</div>
+    <div>type: {{personaggioCorrente?.age}}</div>
+</div>
+<div>informazioni in più: </div>

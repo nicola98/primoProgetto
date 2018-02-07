@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { personaggi } from '../personaggi';
+
 
 
 @Component({
@@ -9,7 +10,16 @@ import { personaggi } from '../personaggi';
 })
 export class listaComponent {
 
-    @Input()
-    items: personaggi[];
+  @Input()
+  items: personaggi[];
 
+  @Output()
+  itemSelectedChange = new EventEmitter<personaggi>()
+
+  mostra = new EventEmitter<personaggi>(); 
+
+  si(item: personaggi)
+  {
+    this.itemSelectedChange.emit(item); 
+  }
 }
