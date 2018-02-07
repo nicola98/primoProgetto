@@ -4,6 +4,7 @@ import { FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { listaComponent } from './listaComponent/list.component';
+import { ListService } from './list.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { listaComponent } from './listaComponent/list.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
