@@ -28,7 +28,7 @@ export class AppComponent {
   }
 
   showItem(perso : personaggi){
-    this.personaggioCorrente=perso;
+    //this.personaggioCorrente=perso;
   }
 
   
