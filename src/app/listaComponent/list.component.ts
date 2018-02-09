@@ -18,6 +18,14 @@ export class listaComponent {
 
   mostra = new EventEmitter<personaggi>(); 
 
+  ngOnInit() {
+    this.items.push(new personaggi);
+  }
+
+  ngOnDestroy() {
+   
+  }
+
   si(item: personaggi)
   {
     this.itemSelectedChange.emit(item); 
