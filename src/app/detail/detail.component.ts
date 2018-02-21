@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute} from '@angular/router';
 import { personaggi } from '../personaggi';
 import { ComunicatorService } from '../comunicator.service';
+import { listaComponent } from '../listaComponent/list.component';
+import { ListService } from '../list.service';
 
 @Component({
   selector: 'app-detail',
@@ -10,10 +13,12 @@ import { ComunicatorService } from '../comunicator.service';
 export class DetailComponent {
 
   personaggioCorrente: personaggi;
-  constructor(private comunucatorService: ComunicatorService) { 
-    this.comunucatorService.mySubject$.subscribe((newValue: personaggi) =>{
-        this.personaggioCorrente=newValue;
+  constructor(private router: ActivatedRoute, private listService: ListService) { 
+    this.router.params.subscribe(params=>{
+      if(params['id'] != '' && params['id'] != null)
+        this.personaggioCorrente = this.listService.getCharacterById(params['id']);
     });
+    
   }
 
 }

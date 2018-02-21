@@ -1,4 +1,5 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { Router} from '@angular/router';
 import { personaggi } from '../personaggi';
 import { ComunicatorService } from '../comunicator.service';
 import { ListService } from '../list.service';
@@ -14,7 +15,7 @@ export class listaComponent {
 
   items: personaggi[];
 
-  constructor(private comunicatorService: ComunicatorService, private listService: ListService){
+  constructor(private router: Router, private listService: ListService){
 
   }
 
@@ -28,7 +29,6 @@ export class listaComponent {
 
   si(item: personaggi)
   {
-   //chiamo il next nel subject
-   this.comunicatorService.changeSubject(item);
+      this.router.navigate(['/detail/'+item.id]);
   }
 }
