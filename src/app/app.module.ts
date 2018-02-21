@@ -8,17 +8,21 @@ import { ListService } from './list.service';
 import { DetailComponent } from './detail/detail.component';
 import { ComunicatorService } from './comunicator.service';
 import { HeaderComponent } from './header/header.component';
+import { DemoRouterModule } from './router/router.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     listaComponent,
     DetailComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    DemoRouterModule
   ],
   providers: [ListService, ComunicatorService],
   bootstrap: [AppComponent]
