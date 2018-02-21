@@ -1,6 +1,7 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { personaggi } from '../personaggi';
 import { ComunicatorService } from '../comunicator.service';
+import { ListService } from '../list.service';
 
 
 
@@ -11,15 +12,14 @@ import { ComunicatorService } from '../comunicator.service';
 })
 export class listaComponent {
 
-  @Input()
   items: personaggi[];
 
-  constructor(private comunicatorService: ComunicatorService){
+  constructor(private comunicatorService: ComunicatorService, private listService: ListService){
 
   }
 
   ngOnInit() {
-    this.items.push(new personaggi());
+    this.items = this.listService.getCharactersList();
   }
 
   ngOnDestroy() {
