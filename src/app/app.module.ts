@@ -7,12 +7,14 @@ import { listaComponent } from './listaComponent/list.component';
 import { ListService } from './list.service';
 import { DetailComponent } from './detail/detail.component';
 import { ComunicatorService } from './comunicator.service';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     listaComponent,
-    DetailComponent
+    DetailComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
