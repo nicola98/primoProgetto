@@ -4,9 +4,12 @@
 
 <div>
     <div appHighlight [defaultColor]="'yellow'">
-        <span>che al mercato mio padre</span>
+        <div>
+            che al mercato mio padre
+            <ng-container *ngIf="evilDad">siccome cattivo</ng-container> non comprò.
+        </div>
     </div>
     <div appHighlight>
-        <span>comprò</span>
+        <span>{{'comprò (Moia cit.)' | atoFour'}}</span>
     </div>
 </div>
