@@ -1,3 +1,12 @@
-<h1 [appHighlight]="color">
+<h1 [appHighlight]="color" [defaultColor]="'cyan'">
     {{title}}
 </h1>
+
+<div>
+    <div appHighlight [defaultColor]="'yellow'">
+        <span>che al mercato mio padre</span>
+    </div>
+    <div appHighlight>
+        <span>comprò</span>
+    </div>
+</div>

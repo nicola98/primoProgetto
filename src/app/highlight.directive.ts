@@ -6,7 +6,8 @@ import { Directive, ElementRef, HostListener, Input} from '@angular/core';
 export class HighlightDirective {
 
   @Input('appHighlight') highlightColor: string;
-
+  @Input() defaultColor:string;
+  private ultimateDefaultColor:string='red';
   constructor(private elem:ElementRef) { 
    
   }
@@ -17,7 +18,7 @@ export class HighlightDirective {
   }
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.setBackGround(this.highlightColor);
+    this.setBackGround(this.highlightColor || this.defaultColor || this.ultimateDefaultColor);
   }
 
   @HostListener('mouseleave') onMouseLeave() {
