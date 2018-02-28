@@ -10,6 +10,7 @@ import { ComunicatorService } from './comunicator.service';
 import { HeaderComponent } from './header/header.component';
 import { DemoRouterModule } from './router/router.module';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HomeComponent } from './home/home.component';
     listaComponent,
     DetailComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponentComponent
   ],
   imports: [
     BrowserModule,
